@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DMSWebApp.Models.AntiAllergicDrug>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Anti Allergic Drug-View</h1>
+
+<a class="btn btn-success" asp-action="Create">Employee Registration</a>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AntiAllergicDrugId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AntiAllergicDrugId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AntiAllergicDrugId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

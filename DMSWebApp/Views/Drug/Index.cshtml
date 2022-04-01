@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DMSWebApp.Models.Drug>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Drugs List</h1>
+<a class="btn btn-success" asp-action="Create">Drug Registration</a>
+
+<table class="table text-white">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.DrugId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChemicalAnalysis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrugId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChemicalAnalysis)
+            </td>
+            <td>
+               
+                <a asp-action="Details" asp-route-id="@item.DrugId">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

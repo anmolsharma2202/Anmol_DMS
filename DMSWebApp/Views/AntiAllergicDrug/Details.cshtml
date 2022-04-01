@@ -1,0 +1,36 @@
+﻿@model DMSWebApp.Models.AntiAllergicDrug
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-white">AntiAllergic Drug</h1>
+
+<div class="text-white">
+    <h4>Details with  AntiAllergic ID-@Html.DisplayFor(model => model.AntiAllergicDrugId)</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LongName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LongName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SpecialDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SpecialDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+   <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.AntiAllergicDrugId">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-secondary" asp-action="Index">Back</a>
+</div>

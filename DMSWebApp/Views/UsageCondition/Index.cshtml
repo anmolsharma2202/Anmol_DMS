@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DMSWebApp.Models.UsageCondition>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Usage Condition 0f Drugs</h1>
+
+
+    <a  class="btn btn-success" asp-action="Create">Add Usage </a>
+    <br />
+    <br />
+<form asp-controller="UsageCondition" asp-action="Details"  method="get">
+    <p class="text-white">
+       DrugName: <input type="text" class="" name="id" />
+        <input type="submit" class="btn text-white" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+                
+            <th>
+                @Html.DisplayNameFor(model => model.ConditionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrugName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.ConditionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrugName)
+            </td>
+            <td>
+                <a asp-action="Edit" class="text-white" asp-route-id="@item.ConditionId">Edit</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

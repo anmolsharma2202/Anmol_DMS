@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DMSWebApp.Models.NewDrugTrial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<<h1 class="text-white">New Drug Trial-View</h1>
+
+<a class="btn btn-success" asp-action="Create">New Drug Trial Registration</a>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TrialId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurposeOfTrial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Drug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrialResults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrialStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrialId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurposeOfTrial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drug.ChemicalAnalysis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrialResults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrialStatus)
+            </td>
+            <td>
+               <a class="text-white" asp-action="Details" asp-route-id="@item.TrialId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
